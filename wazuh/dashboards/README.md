@@ -26,18 +26,6 @@ active threats across the segmented network.
 
 ---
 
-+-------------------+  +---------------------+
-| Severity Pie       |  | Alerts by Signature |
-|  H: 3 (25%)  red   |  | Exploit   : 3      |
-|  M: 5 (42%)  orange|  | Brute-force: 5     |
-|  L: 4 (33%)  blue  |  | Port scan : 4      |
-+-------------------+  +---------------------+
-| Recent Events Table                         |
-| Time     | Src IP          | Dest      | Sig|
-| 08:20:25 | 10.99.99.100   | 10.0.2.10 | CMD|
-| ...                                        |
-+----------------------------------------------+
-
 *The configurations that feed these dashboards are in `../local_rules.xml`
 and `../ossec.conf`. Sample log data that generated the views is available in
 `../../suricata/logs/sample-eve.json`.*
