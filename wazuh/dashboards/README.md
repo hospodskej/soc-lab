@@ -2,8 +2,7 @@
 
 The following dashboards were created in Wazuh 4.14.5 to support triage and
 visualisation of Suricata alerts. Screenshots are not available because the
-lab environment is currently offline, but the layouts and correlation logic
-are described below.
+lab environment is currently offline, and I will post them as soon as the enviroment is up and running again, but the layouts and correlation logic are described below.
 
 ---
 
