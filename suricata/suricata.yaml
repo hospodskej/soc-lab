@@ -1,0 +1,29 @@
+# Use AF_PACKET for inline IPS on pfSense
+af-packet:
+  - interface: em1      # LAN
+    cluster-id: 99
+    ...
+  - interface: em2      # DMZ
+    cluster-id: 98
+
+# Output to eve-log (JSON) for Wazuh
+outputs:
+  - eve-log:
+      enabled: yes
+      filetype: regular
+      filename: eve.json
+      types:
+        - alert
+        - http
+        - dns
+        - tls
+        - flow
+
+# Default rule path + custom rules
+default-rule-path: /usr/local/etc/suricata/rules
+rule-files:
+  - suricata.rules
+  - local.rules
+
+# Threshold config for tuning
+threshold-file: /usr/local/etc/suricata/threshold.config

@@ -1,0 +1,10 @@
+<group name="suricata,">
+  <rule id="100002" level="10">
+    <decoded_as>json</decoded_as>
+    <field name="alert.signature_id">1000001</field>
+    <description>Suricata: Multiple SSH brute-force attempts from same source</description>
+    <same_source_ip />
+    <frequency>3</frequency>
+    <timeframe>60</timeframe>
+  </rule>
+</group>

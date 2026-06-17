@@ -1,0 +1,5 @@
+Prioritized List of Source IPs (High Sev > Medium Sev > Total Alerts):
+
+10.99.99.100     High: 3  Med: 0  Low: 0  Total:  3
+192.168.100.50   High: 0  Med: 5  Low: 0  Total:  5
+172.16.0.22      High: 0  Med: 0  Low: 4  Total:  4
