@@ -1,15 +1,27 @@
-<group name="suricata,">
-  
-  <rule id="100001" level="3">
+  <rule id="100200" level="3">
     <decoded_as>json</decoded_as>
-    <field name="alert.signature_id">1000001</field>
-    <description>Suricata: Single SSH brute-force attempt detected.</description>
+    <field name="alert.signature_id">1000002</field>
+    <description>Suricata: Port scan activity detected.</description>
   </rule>
-  
-  <rule id="100002" level="10" frequency="3" timeframe="60">
-    <if_matched_sid>100001</if_matched_sid>
+
+  <rule id="100201" level="8">
+    <if_matched_sid>100200</if_matched_sid>
     <same_source_ip />
-    <description>Suricata: Multiple SSH brute-force attempts from same source.</description>
+    <frequency>5</frequency>
+    <timeframe>30</timeframe>
+    <description>Suricata: Aggressive port scan from single source (correlation).</description>
   </rule>
-  
-</group>
+
+  <rule id="100300" level="5">
+    <decoded_as>json</decoded_as>
+    <field name="alert.signature_id">1000003</field>
+    <description>Suricata: Exploitation attempt (cmd injection) detected.</description>
+  </rule>
+
+  <rule id="100301" level="12">
+    <if_matched_sid>100300</if_matched_sid>
+    <same_source_ip />
+    <frequency>2</frequency>
+    <timeframe>30</timeframe>
+    <description>Suricata: Repeated exploitation attempts from same source (correlation).</description>
+  </rule>
