@@ -1,3 +1,17 @@
+  <rule id="100100" level="3">
+    <decoded_as>json</decoded_as>
+    <field name="alert.signature_id">1000001</field>
+    <description>Suricata: Single SSH brute-force attempt detected.</description>
+  </rule>
+
+  <rule id="100101" level="10">
+    <if_matched_sid>100100</if_matched_sid>
+    <same_source_ip />
+    <frequency>3</frequency>
+    <timeframe>60</timeframe>
+    <description>Suricata: Multiple SSH brute-force attempts from same source (correlation).</description>
+  </rule>
+
   <rule id="100200" level="3">
     <decoded_as>json</decoded_as>
     <field name="alert.signature_id">1000002</field>
